@@ -1,0 +1,100 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+
+.card-title {
+  font-weight: bold;
+}
+
+nav .btn {
+  margin-left: 10px;
+}
+
+footer {
+  font-family: "Roboto", sans-serif;
+  font-weight: 10px;
+}
+
+.sidenav {
+  width: 280px;
+}
+
+.user-view .name, .user-view .email {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-login {
+  border: 2px solid transparent !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+}
+
+.btn-login:hover {
+  background-color: transparent !important;
+  box-shadow: 0 0 15px 3px rgba(120, 76, 202, 0.6) !important;
+}
+
+.logo-glow {
+  transition: all 0.3s ease;
+}
+
+
+.logo-glow:hover {
+  text-shadow: 0 0 15px 
+               0 0 25px 
+               0 0 40px 
+               0 0 50px 
+}
+
+.menu-glow i {
+  transition: all 0.3s ease;
+}
+
+.menu-glow:hover i {
+  text-shadow: 0 0 10px 
+               0 0 20px 
+               0 0 30px 
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.header, .header .header-content, .navigation {
+  width: 100%;
+}
+.header .header-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col-half { width: 48%; display: inline-block; vertical-align: top; }
+
+@media (max-width: 768px) {
+  .col-half { width: 100%; }
+  .header .header-content { padding: 0.5rem 0; }
+  .banner-grid, .products-grid { grid-template-columns: 1fr; }
+}
+
+html { font-size: 16px; }
+@media (max-width: 600px) { html { font-size: 15px; } }
+@media (max-width: 400px) { html { font-size: 14px; }
+.btn-add { padding: 0.5rem 0.8rem; }
+.product { box-sizing: border-box; }
+}

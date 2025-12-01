@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login / Registro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Css/style_2.css">
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+
+        <form action="./include/login.php" method="POST" class="sign-in-form">
+          <h2 class="title">Iniciar Sesión</h2>
+          <input type="text" name="usuario" placeholder="Usuario" class="input" required />
+          <input type="password" name="contrasena" placeholder="Contraseña" class="input" required />
+          <button type="submit" class="btn solid">Entrar</button>
+        </form>
+
+        <form action="./include/register.php" method="POST" class="sign-up-form">
+          <h2 class="title">Registrarse</h2>
+          <input type="text" name="usuario" placeholder="Usuario" class="input" required />
+          <input type="email" name="correo" placeholder="Correo" class="input" required />
+          <input type="password" name="contrasena" placeholder="Contraseña" class="input" required />
+          <button type="submit" class="btn solid">Registrarse</button>
+        </form>
+
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>¿Nuevo aquí?</h3>
+          <p>Regístrate para comenzar tu aventura.</p>
+          <button class="btn transparent" id="sign-up-btn">Registrarse</button>
+        </div>
+      </div>
+
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>¿Ya tienes cuenta?</h3>
+          <p>Inicia sesión para continuar.</p>
+          <button class="btn transparent" id="sign-in-btn">Iniciar Sesión</button>
+        </div>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h3>¿Ya tienes cuenta?</h3>
+            <p>Inicia sesión para continuar.</p>
+            <button class="btn transparent" id="sign-in-btn-overlay">Iniciar Sesión</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h3>¿Nuevo aquí?</h3>
+            <p>Regístrate para comenzar tu aventura.</p>
+            <button class="btn transparent" id="sign-up-btn-overlay">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./JS/script.js"></script>
+</body>
+</html>

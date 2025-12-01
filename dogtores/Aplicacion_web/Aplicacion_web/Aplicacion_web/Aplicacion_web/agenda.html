@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda - Dogtores</title>
+  <link rel="icon" href="./images/logo_inicio.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="css/agenda.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="header-agenda">
+    <div class="container">
+      <h3 class="center-align">Agenda de Citas</h3>
+      <p class="center-align">Panel de control del veterinario</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row filtros">
+      <div class="col s12 m4">
+        <div class="input-field">
+          <select id="filtroEstado">
+            <option value="todas" selected>Todas las citas</option>
+            <option value="pendiente">Pendientes</option>
+            <option value="confirmada">Confirmadas</option>
+            <option value="urgente">Urgentes</option>
+            <option value="completada">Completadas</option>
+          </select>
+          <label>Filtrar por estado</label>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="input-field">
+          <input type="text" id="filtroFecha" class="datepicker">
+          <label for="filtroFecha">Filtrar por fecha</label>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <button class="btn purple darken-2 waves-effect waves-light" style="margin-top: 20px;" onclick="limpiarFiltros()">
+          <i class="material-icons left">refresh</i>Limpiar filtros
+        </button>
+      </div>
+    </div>
+
+    <div id="listaCitas">
+      <div class="card cita-card">
+        <div class="card-content">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m8">
+              <h5 style="margin-top: 0;">
+                <i class="material-icons tiny">pets</i>
+                Max
+              </h5>
+              <span class="estado-badge pendiente">PENDIENTE</span>
+            </div>
+            <div class="col s12 m4 right-align">
+              <p style="margin: 0; font-size: 18px; font-weight: bold;">06/11/2025</p>
+              <p style="margin: 0; color: #666;">10:00 AM</p>
+            </div>
+          </div>
+          <div class="divider" style="margin: 15px 0;"></div>
+          <div class="cita-info">
+            <i class="material-icons">person</i>
+            <span><strong>Dueño:</strong> Juan Pérez</span>
+          </div>
+          <div class="cita-info">
+            <i class="material-icons">medical_services</i>
+            <span><strong>Servicio:</strong> Consulta General</span>
+          </div>
+          <div class="cita-info">
+            <i class="material-icons">description</i>
+            <span><strong>Síntomas:</strong> Fiebre y falta de apetito</span>
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="#" onclick="confirmarCita(this); return false;" class="purple-text">Confirmar cita</a>
+          <a href="#" onclick="cancelarCita(this); return false;" class="red-text">Cancelar</a>
+          <a href="#" onclick="verDetalles(this); return false;" class="blue-text">Ver detalles</a>
+        </div>
+      </div>
+      <div class="card cita-card">
+        <div class="card-content">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m8">
+              <h5 style="margin-top: 0;">
+                <i class="material-icons tiny">pets</i>
+                Luna
+              </h5>
+              <span class="estado-badge confirmada">CONFIRMADA</span>
+            </div>
+            <div class="col s12 m4 right-align">
+              <p style="margin: 0; font-size: 18px; font-weight: bold;">07/11/2025</p>
+              <p style="margin: 0; color: #666;">2:30 PM</p>
+            </div>
+          </div>
+          <div class="divider" style="margin: 15px 0;"></div>
+          <div class="cita-info">
+            <i class="material-icons">person</i>
+            <span><strong>Dueño:</strong> María García</span>
+          </div>
+          <div class="cita-info">
+            <i class="material-icons">medical_services</i>
+            <span><strong>Servicio:</strong> Vacunación</span>
+          </div>
+          <div class="cita-info">
+            <i class="material-icons">description</i>
+            <span><strong>Síntomas:</strong> Vacuna antirrábica anual</span>
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="#" onclick="marcarCompletada(this); return false;" class="green-text">Marcar como completada</a>
+          <a href="#" onclick="cancelarCita(this); return false;" class="red-text">Cancelar</a>
+          <a href="#" onclick="verDetalles(this); return false;" class="blue-text">Ver detalles</a>
+        </div>
+      </div>
+      <div class="card cita-card">
+        <div class="card-content">
+          <div class="row" style="margin-bottom: 0;">
+            <div class="col s12 m8">
+              <h5 style="margin-top: 0;">
+                <i class="material-icons tiny">pets</i>
+                Rocky
+              </h5>
+              <span class="estado-badge urgente">URGENTE</span>
+            </div>
+            <div class="col s12 m4 right-align">
+              <p style="margin: 0; font-size: 18px; font-weight: bold;">06/11/2025</p>
+              <p style="margin: 0; color: #666;">AHORA</p>
+            </div>
+          </div>
+          <div class="divider" style="margin: 15px 0;"></div>
+          <div class="cita-info">
+            <i class="material-icons">person</i>
+            <span><strong>Dueño:</strong> Carlos Rodríguez</span>
+          </div>
+          <div class="cita-info">
+            <i class="material-icons">medical_services</i>
+            <span><strong>Servicio:</strong> Urgencia</span>
+          </div>
+          <div class="cita-info">
+            <i class="material-icons">description</i>
+            <span><strong>Síntomas:</strong> Accidente, sangrado en pata trasera</span>
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="#" onclick="atenderAhora(this); return false;" class="orange-text"><strong>ATENDER AHORA</strong></a>
+          <a href="#" onclick="verDetalles(this); return false;" class="blue-text">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <div id="sinCitas" class="sin-citas" style="display: none;">
+      <i class="material-icons">event_busy</i>
+      <h5>No hay citas programadas</h5>
+      <p>Las nuevas citas aparecerán aquí automáticamente</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/agenda.js"></script>
+</body>
+</html>

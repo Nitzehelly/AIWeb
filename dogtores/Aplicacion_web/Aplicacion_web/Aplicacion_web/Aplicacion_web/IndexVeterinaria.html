@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dogtores Veterinaria</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Css/style.css">
+  <link rel="icon" href="./images/logo_inicio.png" type="image/x-icon">
+</head>
+<body>
+  <nav class="purple darken-3">
+  <div class="nav-wrapper" style="display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; flex-grow: 1; gap: 10px;">
+      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large  menu-glow">
+        <i class="material-icons white-text">menu</i>
+      </a>
+      <img src="./images/logo.png" alt="Logo Dogtores" style="height: 120px;" id="logo">
+      <a href="#" class="brand-logo logo-glow" style="font-size: 2.2rem; position: static;">Dogtores</a>
+    </div>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="../Aplicacion_web/index.php">Tienda</a></li>
+      <li><a href="./Citas.html">Citas</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="./agenda.html">Agenda</a></li>
+      <li><a href="login.html" class="btn white purple-text btn-login">Login</a></li>
+    </ul>
+  </div>
+  </nav>
+  <ul id="slide-out" class="sidenav purple darken-3">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="./images/sidenavv.png" width="300px">
+        </div>
+        <a href="#user"><img class="circle" src="./images/logo_inicio.png" style="width: fit-content;"></a>
+        <a href="#name"><span class="white-text name" style="font-size: 22px;">Dogtores</span></a>
+        <a href="#email"><span class="white-text email" style="font-size: 22px;">info@dogtores.com</span></a>
+      </div>
+    </li>
+    <li><a href="servicios.html"><i class="material-icons">pets</i>Servicios</a></li>
+    <li><a href="../Aplicacion_web/index.php"><i class="material-icons">store</i>Tienda</a></li>
+    <li><a href="citas.html"><i class="material-icons">event</i>Citas</a></li>
+    <li><a href="contacto.html"><i class="material-icons">contact_mail</i>Contacto</a></li>
+    <li><a href="login.html"><i class="material-icons">login</i>Login</a></li>
+  </ul>
+
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16" width="500px" height="700px" alt="Mascotas felices">
+    </div>
+  </div>
+
+  <div class="container center">
+    <h3>Bienvenido a Dogtores</h3>
+    <p>Tu veterinaria de confianza para el cuidado integral de tus mascotas.</p>
+  </div>
+  <footer class="page-footer purple darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <h5 class="white-text">Acerca de nosotros</h5>
+          <p class="grey-text text-lighten-4">
+            En Dogtores Veterinaria nos dedicamos al bienestar integral de tus mascotas. Ofrecemos servicios médicos, estética, tienda especializada y asesoría personalizada. Nuestro equipo está formado por profesionales apasionados por la salud animal y el trato humano.
+          </p>
+        </div>
+        <div class="col s12 m6">
+          <h5 class="white-text">Contacto</h5>
+          <ul class="grey-text text-lighten-4" id="footer">
+            <li><strong>Correo:</strong> mnit@dogtores.com</li>
+            <li><strong>Teléfono:</strong> (52) 872 107 8438</li>
+            <li><strong>Ubicación:</strong> Av. de las Mascotas #123, Gómez Palacio, DGO, México</li>
+            <li><strong>Horario:</strong> Lunes a sábado, 9:00 a.m. - 7:00 p.m.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <p class="grey-text text-lighten-4">
+            &copy; 2025 Dogtores Veterinaria. Todos los derechos reservados. Página actualizada el 28 de Noviembre de 2025.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems);
+
+      document.querySelectorAll('.sidenav a').forEach(link => {
+        link.addEventListener('click', () => {
+          const instance = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+          instance.close();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

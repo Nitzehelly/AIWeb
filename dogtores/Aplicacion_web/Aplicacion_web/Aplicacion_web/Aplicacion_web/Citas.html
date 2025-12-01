@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Citas - Dogtores</title>
+  <link rel="icon" href="./images/logo_inicio.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body class="container">
+  <h4 class="center">Agendar Cita</h4>
+  <form>
+    <div class="input-field">
+      <input type="text" id="dueño">
+      <label for="dueño">Nombre del Dueño</label>
+    </div>
+    <div class="input-field">
+      <input type="text" id="mascota">
+      <label for="mascota">Nombre de la mascota</label>
+    </div>
+    <div class="input-field">
+      <select id="servicio" name="servicio">
+        <option value="" disabled selected>Selecciona un servicio</option>
+        <option value="consulta">Consulta</option>
+        <option value="vacuna">Vacunación</option>
+        <option value="cirugia">Cirugía</option>
+        <option value="estetica">Estética</option>
+        <option value="estetica">Desparacitacion</option>
+        <option value="estetica">Desparacitacion Pack</option>
+        <option value="estetica">Vacunacion Pack</option>
+      </select>
+      <label>Tipo de Servicio</label>
+    </div>
+    <div class="input-field">
+      <input type="text" class="datepicker" id="fecha">
+      <label for="fecha">Fecha</label>
+    </div>
+    <div class="input-field">
+      <input type="text" id="sintomas">
+      <label for="sintomas">Sintomas</label>
+    </div>
+    <button class="btn purple darken-3">Confirmar</button>
+  </form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/citas.js"></script>
+</body>
+</html>
